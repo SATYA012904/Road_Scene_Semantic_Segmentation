@@ -1,0 +1,257 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fa;
+    color: #1e293b;
+}
+
+.header {
+    background: #101d35;
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.header nav a:hover {
+    color: white;
+}
+
+.status {
+    color: #86efac;
+    font-size: 14px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 35px auto;
+}
+
+.welcome {
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #64748b;
+}
+
+.panel {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.panel h2 {
+    margin-bottom: 22px;
+    font-size: 21px;
+}
+
+.configuration {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+}
+
+.checkbox-label {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal !important;
+}
+
+.upload-area {
+    border: 2px dashed #94a3b8;
+    border-radius: 10px;
+    padding: 35px 15px;
+    text-align: center;
+    background: #f8fafc;
+}
+
+.upload-icon {
+    font-size: 38px;
+    color: #0284c7;
+    margin-bottom: 12px;
+}
+
+.upload-area h3 {
+    margin-bottom: 10px;
+}
+
+.upload-area p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+button:hover {
+    background: #0369a1;
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+#analyzeButton {
+    margin-top: 20px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.result-card h3 {
+    margin-bottom: 12px;
+}
+
+.preview {
+    min-height: 220px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #64748b;
+}
+
+.preview img,
+.preview video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detection-result {
+    margin-top: 25px;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.stat-card {
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 9px;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.stat-card p {
+    font-size: 25px;
+    font-weight: bold;
+    color: #0284c7;
+}
+
+.chart-container {
+    max-width: 650px;
+    margin: 30px auto 0;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .header nav {
+        gap: 15px;
+    }
+
+    .configuration,
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        width: 94%;
+    }
+}
+
+@media (max-width: 450px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+}

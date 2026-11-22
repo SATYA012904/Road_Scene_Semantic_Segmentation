@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Road Scene Understanding Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h2>Road<span>AI</span></h2>
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#analysis">Analysis</a>
+            <a href="#results">Results</a>
+        </nav>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            System Ready
+        </div>
+    </header>
+
+
+    <!-- Main Dashboard -->
+    <main class="container" id="dashboard">
+
+        <section class="welcome">
+            <h1>Road Scene Understanding</h1>
+            <p>
+                Analyze road scenes using semantic segmentation
+                and object detection.
+            </p>
+        </section>
+
+
+        <!-- Model Configuration -->
+        <section class="panel">
+            <h2>Model Configuration</h2>
+
+            <div class="configuration">
+
+                <div class="form-group">
+                    <label for="modelSelect">Segmentation Model</label>
+
+                    <select id="modelSelect">
+                        <option value="unet">U-Net</option>
+                        <option value="deeplab">DeepLabV3+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Object Detection</label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="yoloToggle" checked>
+                        Enable YOLOv8 Detection
+                    </label>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Upload Section -->
+        <section class="panel">
+            <h2>Upload Road Scene</h2>
+
+            <div class="upload-area" id="uploadArea">
+
+                <div class="upload-icon">↑</div>
+
+                <h3>Upload an Image or Video</h3>
+
+                <p>Choose a road scene image or video for analysis.</p>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept="image/*,video/*"
+                    hidden
+                >
+
+                <button type="button" id="uploadButton">
+                    Choose File
+                </button>
+
+                <p id="fileName">No file selected</p>
+
+            </div>
+
+            <button type="button" id="analyzeButton" disabled>
+                Analyze Road Scene
+            </button>
+        </section>
+
+
+        <!-- Preview Section -->
+        <section class="panel" id="results">
+
+            <h2>Analysis Results</h2>
+
+            <div class="results-grid">
+
+                <div class="result-card">
+                    <h3>Original Input</h3>
+                    <div class="preview" id="originalPreview">
+                        <p>No input uploaded</p>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Segmentation Output</h3>
+                    <div class="preview" id="segmentationPreview">
+                        <p>Waiting for analysis</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="result-card detection-result">
+                <h3>Object Detection Output</h3>
+                <div class="preview" id="detectionPreview">
+                    <p>Waiting for analysis</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Analytics Section -->
+        <section class="panel" id="analysis">
+
+            <h2>Road Scene Analytics</h2>
+
+            <div class="analytics-grid">
+
+                <div class="stat-card">
+                    <h3>Total Objects</h3>
+                    <p id="totalObjects">--</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Detected Cars</h3>
+                    <p id="carCount">--</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Detected Persons</h3>
+                    <p id="personCount">--</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Processing Time</h3>
+                    <p id="processingTime">--</p>
+                </div>
+
+            </div>
+
+            <div class="chart-container">
+                <canvas id="classChart"></canvas>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Road Scene Understanding | U-Net · DeepLabV3+ · YOLOv8</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

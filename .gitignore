@@ -1,0 +1,31 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Uploaded files
+static/uploads/*
+!static/uploads/.gitkeep
+
+# Generated results
+static/results/*
+!static/results/.gitkeep
+
+# Temporary debugging files
+debug_deeplab.py
+deeplab_error.txt
+test_deeplab_inference.py
+test_deeplab_savedmodel.py
+test_models.py
+
+# Incorrect/unused model
+yolo11n.pt
+
+# IDE
+.vscode/
